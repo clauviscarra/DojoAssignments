@@ -1,10 +1,16 @@
-var hour=8;
-var minute=20;
-var period="am";
+var hour=4;
+var minute=23;
+var period="pm";
 
 if(minute<30 && minute!=5 && minute!=15){
-  if(period==="am"){
+  if(period==="am" && hour>=1 && hour<=11){
     console.log("It's just after "+hour+" in the morning.");
+  }
+  else if(period==="pm" && hour===12 && minute===0){
+    console.log("It is noon.");
+  }
+  else if(period==="am" && hour===12 && minute===0){
+    console.log("It is midnight.");
   }
   else{
     console.log("It's just after "+hour+" in the evening.");
@@ -15,7 +21,7 @@ else if(minute>30){
     console.log("It's just before "+(hour+1)+" in the morning.");
   }
   else{
-    console.log("It's just after "+(hour+1)+" in the evening.");
+    console.log("It's just after "+(hour)+" in the evening.");
     }
 }
 if(minute===5){
