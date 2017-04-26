@@ -1,0 +1,52 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+h1{
+  font-family: sans-serif;
+  text-align: center;
+  margin:15px;
+}
+p{
+  font-family: sans-serif;
+  display: inline-block;
+  text-align: justify;
+  margin: 10px;
+  font-size: 13px;
+
+}
+/*button{
+  width:auto;
+  height:30px;
+  background-color: black;
+  color: white;
+  padding: 4px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+
+}*/
+
+#wrapper{
+  margin:auto;
+  width:60%;
+}
+.black-line{
+  width:auto;
+  height:20px;
+  border-bottom: 2px solid black;
+}
+
+.red{
+  color:red;
+}
+
+#togglecat{
+  margin: auto;
+  display:none;
+
+}
+#fadecat{
+  margin: auto;
+  display: none;
+}

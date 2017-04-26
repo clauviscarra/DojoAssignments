@@ -1,0 +1,25 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+
+.ninja{
+  margin:2px;
+  display: none;
+}
+
+
+.cat{
+  display: block;
+  margin:2px;
+}
+
+.container{
+  width:200px;
+  height:auto;
+}
+
+button{
+  display: none;
+  margin:10px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Pop!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+
+          $("img").click(function(){
+            $(this).hide("fast");
+          });
+
+          $("button").click(function(){
+            $("img").show();
+          });
+
+      });
+    </script>
+  </head>
+  <body>
+
+
+  <div class="parent">
+    <div class="child">
+      <div class="flex-containter">
+        <img src="flat,800x800,075,f.u2.jpeg"/>
+        <img src="flat,800x800,075,f.u2.jpeg"/>
+        <img src="flat,800x800,075,f.u2.jpeg"/>
+        <img src="flat,800x800,075,f.u2.jpeg"/>
+        <img src="flat,800x800,075,f.u2.jpeg"/>
+        <img src="flat,800x800,075,f.u2.jpeg"/>
+        <img src="flat,800x800,075,f.u2.jpeg"/>
+        <img src="flat,800x800,075,f.u2.jpeg"/>
+        <img src="flat,800x800,075,f.u2.jpeg"/>
+
+      <button> Restore </button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

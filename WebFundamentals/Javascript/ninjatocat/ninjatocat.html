@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Pop!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+          //$("img").click(function(){
+            //console.log("data-alt-src value is", $(this).attr("data-alt-src"));
+          //});
+          $(".cat").click(function(){
+            $(this).hide();
+          });
+
+          $("#cat0").click(function(){
+            $("#ninja0").show();
+          });
+
+          $("#cat1").click(function(){
+            $("#ninja1").show();
+          });
+
+          $("#cat2").click(function(){
+            $("#ninja2").show();
+          });
+
+          $("#cat3").click(function(){
+            $("#ninja3").show();
+          });
+
+          $("#cat4").click(function(){
+            $("#ninja4").show();
+          });
+
+          $(".ninja").click(function(){
+            $(this).hide();
+          });
+
+          $("#ninja0").click(function(){
+            $("button").show("slow");
+          });
+
+          $("button").click(function(){
+            $(".cat").show();
+          });
+
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <img class="cat" id="cat0" src="cat0.png" data-alt-src="ninja.png"/>
+      <img class="ninja" id="ninja0" src="ninja0.png"/>
+      <img  class="cat" id="cat1" src="cat1.png"/>
+      <img class="ninja" id="ninja1" src="ninja1.png"/>
+      <img  class="cat" id="cat2" src="cat2.png"/>
+      <img class="ninja" id="ninja2" src="ninja2.png"/>
+      <img  class="cat" id="cat3" src="cat3.png"/>
+      <img class="ninja" id="ninja3" src="ninja3.png"/>
+      <img  class="cat" id="cat4" src="cat4.png"/>
+      <img class="ninja" id="ninja4" src="ninja4.png"/>
+      <button> Restore </button>
+
+
+    </div>
+
+  </body>
+
+</html>

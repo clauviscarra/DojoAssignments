@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My jQuery basic assignment!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+
+          // $("h1").click(function(){
+          //   $(this).hide();
+          // });
+
+          $("#AddClass button").click(function(){
+            $("#AddClass p").addClass("red");
+          });
+
+          $("#Slidetoggle button").click(function(){
+            $("#togglecat").slideToggle();
+          });
+
+          $("#append").click(function(){
+            $("#appendp").append("<b> APPEND PARAGRAPH. </b>");
+          });
+
+          $("#prepend").click(function(){
+            $("#prependp").prepend("<b> PREPEND PARAGRAPH. </b>");
+          });
+
+          $("#out").click(function(){
+            $("#fadecat").fadeOut("slow");
+          });
+
+          $("#in").click(function(){
+            $("#fadecat").fadeIn("slow");
+          });
+
+          $("#up").click(function(){
+            $("#Fade").slideUp("slow");
+          });
+
+          $("#down").click(function(){
+            $("#Fade").slideDown("slow");
+          });
+
+          $("#text-change button").click(function(){
+            $("#text-change h1").text("New Text Here!");
+          });
+
+          $("#data").click(function(){
+            $("div").data("greeting","Hello World");
+          });
+
+          $("#data-transfer").click(function(){
+            alert($("div").data("greeting"));
+          });
+
+      });
+    </script>
+
+  </head>
+  <body>
+
+  </body>
+  <div id= "wrapper">
+    <div id="AddClass">
+      <h1>AddClass</h1>
+      <button>AddClass</button> <p>Click the button to add class 'red' to this paragraph. </p>
+      <div class="black-line"></div>
+    </div>
+    <div id="Slidetoggle">
+      <h1>SlideToggle</h1>
+      <button>SlideToggle</button> <p>Click the button to slidetoggle the hidden image. </p>
+      <br><img id="togglecat" src="cat-image1.gif" alt="cute cat gif"/></br>
+      <div class="black-line"></div>
+    </div>
+    <div id="Append">
+      <h1>Append - Prepend</h1>
+      <button id="append">Append</button> <p id="appendp">Click the button to append a new paragraph. </p>
+      <button id="prepend">Prepend</button> <p id="prependp">Click the button to prepend a new paragraph. </p>
+      <div class="black-line"></div>
+    </div>
+    <div id="Fade">
+      <h1>FadeIn-FadeOut</h1>
+      <button id="in">FadeIn</button> <p>Click the button to fade in.</p>
+      <button id="out">FadeOut</button> <p>Click the button to fade out.</p>
+      <img id="fadecat" src="cat-image2.gif" alt="another cat image"/>
+      <div class="black-line"></div>
+    </div>
+    <div id="SlideUpDown">
+      <h1>SlideUp-SlideDown</h1>
+      <button id="up">SlideUp</button> <p>Click the button to slide chapter up.</p>
+      <button id="down">SlideDown</button> <p>Click the button to slide chapter down.</p>
+      <div class="black-line"></div>
+    </div>
+    <div id="text-change">
+      <h1>Change This Text</h1>
+      <button>Text</button> <p>Click the button to change header text. </p>
+      <div class="black-line"></div>
+    </div>
+    <div id="Data-container">
+      <h1>Data</h1>
+      <button id="data">Here's Some Data</button> <p>Click the button to transfer data. </p>
+      <button id="data-transfer">Show The Data</button> <p>Click the button to see data transfered. </p>
+
+      <div class="black-line"></div>
+    </div>
+  </div>
+</html>
