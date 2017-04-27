@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+    <script type="text/javascript">
+
+  $(document).ready(function(){
+    
+    $('form').on('submit', function (e) {
+    e.preventDefault();
+    var newName = $('form').find('input[type="text"]').val();
+    $('table').append('<tr><td>' + newName + '</td></tr>')
+  });
+
+  });
+
+</script>
+  </head>
+  <body>
+
+
+  <form>
+  Name:<input type="text" />
+  <input type="submit" />
+  </form>
+
+  <table>
+  <tr>
+  <th>Name</th>
+  </tr>
+  // Here the name should be appended...within a <tr><td></td></tr>
+  </table>
+
+
+  </body>
+</html>

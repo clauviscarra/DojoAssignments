@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+    <script type="text/javascript">
+
+  $(document).ready(function(){
+
+
+   $('button').click(function(){
+    $('form').submit();
+   });
+
+   $('form').on('submit', function (e) {
+   e.preventDefault();
+   var newName = $('form').find('input[value="First Name"]').val();
+   $("table").append('<tr><td>' + newName + '</td></tr>');
+ });
+
+ // $('button').click(function (e) {
+ //   e.preventDefault();
+ //   var newName = $('form').find('input[type="text"]').val();
+ //   $('table').append('<tr><td>' + newName + '</td></tr>')
+ //   });
+
+
+  });
+
+</script>
+  </head>
+  <body>
+    <table>
+  <tr>
+    <th id="first-name">First Name</th>
+    <th id="last-name">Last Name</th>
+    <th id="e-mail">E-mail Address</th>
+    <th id="contact-num">Contact #</th>
+  </tr>
+</table>
+
+<h1> Add User </h1>
+<form>
+  <br>First Name:<input type="text" name="firstname" value="First Name"></br>
+  <br>Last Name:<input type="text" name="Last-Name" value="Last Name"></br>
+  <br>E-mail Address:<input id="email"type="text" name="E-mail Address" value="E-mail"></br>
+  <br>Contact Number:<input type="text" name="Contact" value="Phone"></br>
+</form>
+
+
+<button class="adduser">Add User</button>
+
+
+
+  </body>
+</html>

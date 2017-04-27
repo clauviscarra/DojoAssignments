@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Pop!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+    <script type="text/javascript">
+
+  $(document).ready(function(){
+   $('button').click(function(){
+    $('.a').append('<h3>I am a new content</h3>');
+   });
+   $('.a').on('mouseover', 'h3', function(){
+    $(this).css('color', 'green');
+   });
+  });
+
+</script>
+<body>
+  <button>Click me</button>
+  <div class="a">
+   <h3>I am old content</h3>
+  </div>
+  <div class="b">
+   <h3>I am old content</h3>
+  </div>
+  <div class="a">
+   <h3>I am old content</h3>
+  </div>
+</body>
+
+
+    <!-- function attach_h3_handlers() {
+            $('h3').click( function() { alert('You clicked an H3!'); });
+        }
+        $(document).ready( function() {
+            attach_h3_handlers();
+            $('button').click( function() {
+                $('div').append('<h3>I am a dynamically generated H3</h3>');
+                attach_h3_handlers();
+            });
+        }); -->
+    <!-- </script>
+    <body>
+        <div>
+            <button>Click me to add a new H3 tag!</button>
+            <h3>Click me to see a message!</h3>
+        </div>
+    </body> -->
