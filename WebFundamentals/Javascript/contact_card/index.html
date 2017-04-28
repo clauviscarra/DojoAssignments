@@ -44,8 +44,8 @@
                     $("#popup").css('visibility','visible');
                 });
 
-                $("#clickhere").click(function(){
-                  $(this).css('visibility','hidden');
+                $(document).on('click', '#clickhere', function(){
+                  $(this).hide("fast");
                 });
 
             });

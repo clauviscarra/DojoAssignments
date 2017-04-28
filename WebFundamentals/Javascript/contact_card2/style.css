@@ -1,0 +1,45 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    width: 1000px;
+    padding: 15px;
+    margin: 0px auto;
+}
+
+.info_form_container {
+    width: 400px;
+    display:inline-block;
+}
+
+.info_form {
+    width: 400px;
+    padding: 15px;
+    text-align: left;
+}
+
+input {
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.card_container {
+    width: 500px;
+    display:inline-block;
+    vertical-align: top;
+}
+
+.contact_card {
+    width: 300px;
+    padding: 15px;
+    border: 2px solid black;
+    text-align: center;
+    margin: 10px;
+}
+
+.description_container {
+    text-align: center;
+    margin: 10px;
+}

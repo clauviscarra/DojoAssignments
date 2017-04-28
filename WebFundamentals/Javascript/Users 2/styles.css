@@ -1,0 +1,48 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+}
+
+
+/*.table{
+  width: 600px;
+  height:30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+}*/
+
+table, td {
+  border: 1px solid darkgrey;
+  width: 480px;
+  white-space: nowrap;
+  /*overflow: hidden;*/
+  margin-bottom: 40px;
+  padding: 3px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.AddUser {
+  width: 300px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  right: 80px;
+}
+
+hr {
+  margin-bottom: 20px;
+}
+
+form {
+  text-align: right;
+  margin-top: 10px;
+}
+
+form input {
+  margin-top: 10px;
+}
