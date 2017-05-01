@@ -1,0 +1,25 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+
+.parent{
+  display:flex;
+  height: 900px;
+}
+
+.child{
+  width:900px;
+  height:auto;
+  margin:auto;
+}
+.pokemonimages{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+img{
+  width:190px;
+  height: auto;
+  margin:5px;
+}

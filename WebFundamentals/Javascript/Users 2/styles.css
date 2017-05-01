@@ -42,6 +42,9 @@ form {
   text-align: right;
   margin-top: 10px;
 }
+img{
+  display: inline-block;
+}
 
 form input {
   margin-top: 10px;
@@ -49,7 +52,4 @@ form input {
 
 form button{
   margin-top: 10px;
-}
-img{
-  display:none;
 }

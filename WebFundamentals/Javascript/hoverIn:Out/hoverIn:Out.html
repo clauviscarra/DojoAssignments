@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Leo Page</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $(".newLeo").hide();
+
+      // $('#special a').bind('mouseover', function(){
+      //         $(this).parent('li').css({position:'relative'});
+      //         var img = $(this).children('img');
+      //         $('<div />').css({
+      //             'height': img.height(),
+      //             'width': img.width(),
+      //             'background-color': 'red',
+      //             'position': 'absolute',
+      //             'top': 0,
+      //             'left': 0,
+      //             'opacity': 0.3
+      //         }).bind('mouseout', function(){
+      //             $(this).remove();
+      //         }).insertAfter(this);
+      //     });
+
+      $("img").hover(function() {
+        $(this).addClass("hover");
+      }, function() {
+        $(this).removeClass("hover");
+      });
+
+    
+
+    });
+    //     $("img").mouseover(function(){
+    //       $(this).addClass("newImage");{
+    //       }
+    //     });
+    //
+    //     $(".newImage").mouseout(function(){
+    //       $("img").addClass("newImage2");
+    //     });
+    //
+    //     return false;
+    //
+    // });
+  </script>
+</head>
+
+<body>
+
+
+  <div class="parent">
+    <div class="child">
+      <div class="flex-containter">
+        <img src="leopicture.jpeg" />
+        <img src="leopicture.jpeg" />
+        <img src="leopicture.jpeg" />
+        <img src="leopicture.jpeg" />
+
+
+      </div>
+    </div>
+
+    <div class="newLeo">
+      <img class="hover" src="leo2.jpeg">
+
+    </div>
+  </div>
+
+</body>
+
+</html>

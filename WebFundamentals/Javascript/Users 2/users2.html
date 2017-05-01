@@ -7,7 +7,13 @@
   <link href="styles.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
+
+
     $(document).ready(function(){
+
+
+      $("img").hide();
+
       $("form").submit(function(){
 
         //asign values from element fields to variables
@@ -17,14 +23,11 @@
         var contact=$("#contact").val();
         console.log(firstName,lastName,email,contact)
         //appedn data from variables onto tables
-        $("tbody").prepend("<tr> <td> " + firstName + " </td> <td>" + lastName + "</td><td>" + email + "</td><td>" + contact + "</td></tr>");
+        $("tbody").append("<tr> <td> " + firstName + " </td> <td>" + lastName + "</td><td>" + email + "</td><td>" + contact + "</td></tr>");
 
-        // $("table" email).click(function(){
-        //   $("img").show();
-        // });
-        // $(document).on("click", "table", email,function(){
-        //   alert("you clicked on the table!");
-        // });
+        $(document).on("click", "table", email,function(){
+          $("img").show("slow");
+        });
 
         $("input[type=text]").val("");
 
@@ -55,6 +58,7 @@
       <tbody>
 
       </tbody>
+
     </table>
   </div class="table">
 
@@ -70,15 +74,16 @@
       <input type="text" id="last_name" name="last_name" placeholder="Last Name">
       <br>
        E-mail:
-      <input type="text" id="email" name="email" placeholder="E-Mail">
+      <input type="text" id="email" name="email" placeholder="E-Mail">      <img src="arrowbutton.png"/>
+
       <br>
       Contact Number:
       <input type="text" id="contact" name="contact" placeholder="Phone Number">
       <br>
       <button type="submit">Add User </button>
+
     </form>
   </div>
-  <img src="arrowbutton.png"/>
 
 </body>
 

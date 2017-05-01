@@ -4,7 +4,30 @@
   <title>Yellow Belt</title>
   <meta charset="utf-8"/>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+
+        $("#banner").click(function(){
+          $(".line-break").slideToggle("slow");
+        });
+        //getter function
+        $(".notes1").click(function(){
+          var myText = $("#texttt").text();
+          alert(myText);
+        });
+        //setter function
+        $("#text-box").click(function(){
+          $("h1").text("New Titles");
+        });
+
+    });
+  </script>
 </head>
+
+
+
   <body>
     <div id="wrapper">
       <div id="header">
@@ -19,6 +42,7 @@
             <a href="google.com"><li>Resources</li></a>
             <a href="google.com"><li>Help & Support</li></a>
             <a href="google.com"><li>Contact</li></a>
+
         </ul>
       </div>
       <img id="banner" src="banner_img.png" alt="floral banner">
@@ -37,7 +61,7 @@
             <div class="gradient-bar">
               <h1>Notes Area</h1>
             </div>
-            <p>Edit the global sidebar.html to update this text. You can include information, notes and links in this area.</p>
+            <p id="texttt">Edit the global sidebar.html to update this text. You can include information, notes and links in this area.</p>
             <a href="google.com">Sample link.....</a>
           </div>
           <div id="text-box">
