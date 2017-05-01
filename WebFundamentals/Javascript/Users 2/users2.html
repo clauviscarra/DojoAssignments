@@ -17,19 +17,23 @@
         var contact=$("#contact").val();
         console.log(firstName,lastName,email,contact)
         //appedn data from variables onto tables
-        $("tbody").append("<tr><td>" + firstName + "</td><td>" + lastName + "</td><td>" + email + "</td><td>" + contact + "</td></tr>");
+        $("tbody").prepend("<tr> <td> " + firstName + " </td> <td>" + lastName + "</td><td>" + email + "</td><td>" + contact + "</td></tr>");
 
-        //$("#first_name").val("");
+        // $("table" email).click(function(){
+        //   $("img").show();
+        // });
+        // $(document).on("click", "table", email,function(){
+        //   alert("you clicked on the table!");
+        // });
 
         $("input[type=text]").val("");
 
+        //so that the page won't load again
         return false;
 
       });
 
-      $(document).on("click", "table", function(){
-        alert("you clicked on the table!");
-      });
+
 
     });
 
@@ -71,9 +75,10 @@
       Contact Number:
       <input type="text" id="contact" name="contact" placeholder="Phone Number">
       <br>
-      <input type="submit">
+      <button type="submit">Add User </button>
     </form>
   </div>
+  <img src="arrowbutton.png"/>
 
 </body>
 
