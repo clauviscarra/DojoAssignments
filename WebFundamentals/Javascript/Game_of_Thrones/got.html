@@ -1,0 +1,123 @@
+<head>
+  <meta charset="utf-8">
+  <title>Game of Thrones</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $("#stark").click(function(){
+        $(".info").html(starkhouse);
+
+        function starkhouse(){
+        $.get("https://anapioficeandfire.com/api/houses/362", function(res){
+
+          var html_str = "";
+          html_str += "<p>" + "Name: " + res.name + "</p> ";
+          html_str += "<p>" + "Words: " + res.words + "</p> ";
+          html_str += "<p>" + "Titles: " + res.titles + "</p> ";
+
+
+
+          $("#infohere").html(html_str);
+
+
+        }, "json");
+        }
+
+        return false;
+      });
+
+      $("#targaryen").click(function(){
+        $(".info").html(targaryenhouse);
+
+        function targaryenhouse(){
+        $.get("https://anapioficeandfire.com/api/houses/378", function(res){
+
+          var html_str2 = "";
+          html_str2 += "<p>" + "Name: " + res.name + "</p> ";
+          html_str2 += "<p>" + "Words: " + res.words + "</p> ";
+          html_str2 += "<p>" + "Titles: " + res.titles + "</p> ";
+
+
+
+          $("#infohere").html(html_str2);
+
+
+        }, "json");
+        }
+
+        return false;
+      });
+      $("#lannister").click(function(){
+        $(".info").html(lannisterhouse);
+
+        function lannisterhouse(){
+        $.get("https://anapioficeandfire.com/api/houses/229", function(res){
+
+          var html_str3 = "";
+          html_str3 += "<p>" + "Name: " + res.name + "</p> ";
+          html_str3 += "<p>" + "Words: " + res.words + "</p> ";
+          html_str3 += "<p>" + "Titles: " + res.titles + "</p> ";
+
+
+
+          $("#infohere").html(html_str3);
+
+
+        }, "json");
+        }
+
+        return false;
+      });
+      $("#baratheon").click(function(){
+        $(".info").html(baratheonhouse);
+
+        function baratheonhouse(){
+        $.get("https://anapioficeandfire.com/api/houses/15", function(res){
+
+          var html_str4 = "";
+          html_str4 += "<p>" + "Name: " + res.name + "</p> ";
+          html_str4 += "<p>" + "Words: " + res.words + "</p> ";
+          html_str4 += "<p>" + "Titles: " + res.titles + "</p> ";
+
+
+
+          $("#infohere").html(html_str4);
+
+
+        }, "json");
+        }
+
+        return false;
+      });
+
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="parent">
+    <div class="child">
+      <div class="images">
+        <img id="stark" src="stark.jpg" />
+        <img id="targaryen" src="targaryen.jpg" />
+        <img id="lannister" src="lannister.jpg" />
+        <img id="baratheon" src="baratheon.png" />
+
+      </div>
+
+      <div class="info">
+        <h1> HOUSE DETAILS </h1>
+
+        <div id="infohere">
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</body>

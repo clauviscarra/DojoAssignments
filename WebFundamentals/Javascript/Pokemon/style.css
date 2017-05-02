@@ -1,15 +1,16 @@
 *{
   margin:0px;
   padding:0px;
+  font-family: sans-serif;
 }
 
 .parent{
   display:flex;
-  height: 900px;
+  height: auto;
 }
 
 .child{
-  width:900px;
+  width:1100px;
   height:auto;
   margin:auto;
 }
@@ -17,9 +18,25 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  width:700px;
 }
 img{
   width:190px;
   height: auto;
   margin:5px;
+}
+h1{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.pokedex{
+  display: inline-block;
+  position: relative;
+  left:800px;
+  bottom:6500px;
+  width:200px;
+  height: 500px;
+  border: 30px solid red;
+  border-radius: 20px;
+  padding:20px;
 }

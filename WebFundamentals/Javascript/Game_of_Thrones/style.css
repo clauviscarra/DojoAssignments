@@ -1,0 +1,53 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+
+.parent{
+  display: flex;
+}
+
+.child{
+  width: 700px;
+  height: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+.images {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+img {
+  height: 100px;
+}
+
+h1 {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 5px;
+  font-size: 20px;
+}
+p{
+  font-family: sans-serif;
+}
+
+.info{
+  border: 2px solid black;
+  width:700px;
+  height:200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+#infohere{
+  width:500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
