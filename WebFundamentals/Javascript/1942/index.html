@@ -143,8 +143,9 @@ Features:
 		displayHero();
 		moveEnemies();
 		displayEnemies();
-		detectCollision();
 		displayScore();
+		detectCollision();
+
 
 
 
@@ -153,6 +154,8 @@ Features:
 	function bulletLoop(){
 		moveBullets();
 		displayBullets();
+		detectCollision();
+
 
 
 	}
@@ -163,12 +166,13 @@ Features:
 	function detectCollision(){
 		for (var i=0; i<bullets.length; i++){
 			for (var j=0; j<enemies.length; j++){
-				if (Math.abs(bullets[i].x - enemies[j].x < 5)  && Math.abs(bullets[i].y -enemies[j].y <5)){
-					bullets.pop();
+				if (Math.abs(bullets[i].x - enemies[j].x) < 10  && Math.abs(bullets[i].y -enemies[j].y) < 10){
 
 					enemies[j] = enemies[enemies.length-1];
 					enemies.pop();
-					// console.log('bullet', i, 'and enemy', j, 'have collided');
+					bullets.pop();
+
+					console.log('bullet', i, 'and enemy', j, 'have collided');
 					score += 10;
 					if(score == 50){
 						score  = "YOU WIN!"
