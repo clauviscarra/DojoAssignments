@@ -14,19 +14,22 @@
 
 
 def typeList(x):
-    Int = 0
-    Str = 0
+
+    # Useage of Int and Str here is great. Consider this, would a simple change in boolean value work better or worse that 0 or not 0? Why or why not?
+
+    Int = 0 # False -> flag
+    Str = 0 # False -> flag
     newString = ""
     summ = 0
 
     for i in range (0, len(x)):
         if type(x[i]) == int or type(x[i]) == float:
-            Int += 1
+            Int += 1 # Int = True -> flag change
             summ += x[i]
         elif type(x[i]) == str:
             Str += 1
             newString = newString + x[i] + " "
-
+    # if Str and Int -> compare flag
     if Str > 0 and Int > 0:
         print "The array you entered is of mixed type"
         print "String:", newString
