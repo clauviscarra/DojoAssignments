@@ -12,3 +12,6 @@ for word in wordlist:
     if letters & set(word):
         newlist.append(word)
 print newlist
+
+
+# set objects. COOL!
