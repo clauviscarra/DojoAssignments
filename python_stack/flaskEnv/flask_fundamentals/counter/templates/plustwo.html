@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Counter</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+      $(document).ready(function() {
+      });
+      var counter = 0
+      $(document).on("click", ".button", function(){
+        counter += 2
+        $(".add_here").append(counter)
+        return false;
+
+
+      });
+    </script>
+
+  <style>
+  h1 {
+    font-family: sans-serif;
+    text-align: center;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 100px;
+  }
+
+  p{
+    font-family: sans-serif;
+    text-align: center;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 5px;
+  }
+
+  .button{
+    margin-left:auto;
+    margin-right: auto;
+  }
+
+  </style>
+  <body>
+    <h1> Counter </h1>
+    <input class ='button' type='submit' value='Add Two!'>
+
+    <p>{{session['counter']}} times</p>
+    <div class ="add_here"></div>
+
+
+  </body>
+</html>
