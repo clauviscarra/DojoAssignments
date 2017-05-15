@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Great Number Game</title>
+  </head>
+  <style>
+  h1, h2, h3, h4{
+    font-family: sans-serif;
+    margin: auto;
+  }
+  p{
+    text-align: center;
+    font-family: sans-serif;
+  }
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+    border-radius: 19px;
+    color: white;
+    height:70px;
+    width:200px;
+    padding: 20px;
+  }
+  </style>
+  <body>
+    <h1> Welcome to the Great Number Game! </h1>
+    <h3> I am thinking of a number between 1 and 100 </h3>
+    <h4> Take a wild guess </h4>
+    <form action='/guess' method='post'>
+      <input type='text' name='guess'>
+      <input type='submit'>
+    </form>
+
+    <div class = "container">
+      <p> {{message}}</p>
+    </div>
+  </body>
+</html>

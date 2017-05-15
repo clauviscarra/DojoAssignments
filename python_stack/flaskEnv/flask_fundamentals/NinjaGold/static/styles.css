@@ -1,0 +1,43 @@
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+.wrapper{
+  position: relative;
+  margin:auto;
+  padding:10px;
+  width:950px;
+}
+.header input{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding:10px;
+}
+.header p{
+  display: inline-block;
+}
+.body {
+  position: relative;
+  margin: auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 1000px;
+  height: 200px;
+}
+
+
+.main{
+  width: 200px;
+  height: 100px;
+  margin: 10px;
+  border: 1px solid black;
+  padding: 10px;
+}
