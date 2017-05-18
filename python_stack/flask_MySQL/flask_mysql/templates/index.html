@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actors</title>
+  </head>
+  <style>
+  p{
+    font-family: sans-serif;
+  }
+  </style>
+  <body>
+    {%for i in films%}
+      <p>{{i.title}} {{i.name}}</p>
+    {%endfor%}
+  </body>
+</html>

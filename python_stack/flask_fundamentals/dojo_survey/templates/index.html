@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Return Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  </style>
+</head>
+
+<body>
+  <form action='/submission', method='POST'>
+      Your Name: <input type='text' name='name'>
+      <br>
+      Dojo Location: <select name='location'>
+        <option value='Washington, DC'>DC</option>
+
+          <option value='Washington, DC'>DC</option>
+          <option value='San Jose'>San Jose</option>
+          <option value='Seattle'>Seattle</option>
+      </select>
+      <br>
+      Favorite Language: <select name='language'>
+          <option value='Python'>Python</option>
+          <option value='JavaScript'>JavaScript</option>
+          <option value='Java'>Java</option>
+      </select>
+      <br>
+      <textarea name='comments' rows='4' cols='50'></textarea>
+      <br>
+      <input type='submit'>
+</form>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+  <p>{{message}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+  </div>
+
+</body>
+
+</html>

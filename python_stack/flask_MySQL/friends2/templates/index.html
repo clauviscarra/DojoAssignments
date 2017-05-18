@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Adding Friends</title>
+  </head>
+  <style>
+  *{
+    padding:0px;
+    margin:0px;
+    font-family: sans-serif;
+  }
+  .wrapper{
+    margin:auto;
+  }
+  .show{
+    margin-bottom:20px;
+  }
+  th, td{
+    text-align: left;
+    padding: 8px;
+  }
+  tr:nth-children(even){background-color: #f2f2f2}
+
+  th{
+    background-color: #4CAF50;
+    color:white;
+  }
+  </style>
+  <body>
+    <div class ="wrapper">
+      <div class ="show">
+        <h1> Friends:</h1>
+        <table>
+        <tr>
+          <td>ldksjfdflskj</td>
+          <td>Age</td>
+          <td>Friend since </td>
+          <!-- {%for friend in friends%}
+        </tr>
+        <tr>
+          <td>{{friend['first_name']}} {{friend['last_name']}}</td>
+          <td>{{friend['age']}}</td>
+          <td>{{friend['friend_since']}}</td>
+        </tr>
+        {%endfor%} -->
+
+      </table>
+      </div>
+      <h1> Add friend: </h1>
+      <div class="formImput">
+        <form action="/friend" method ="POST">
+          First Name:<input type="text" name="first_name" value="First Name">
+          Age:<input type="text" name="age" value="First Name">
+          <input type="submit" value="Submit">
+        </form>
+
+      </div>
+    </div>
+
+  </body>
+</html>
