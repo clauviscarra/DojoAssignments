@@ -3,11 +3,6 @@
 <head>
     <meta charset='utf-8'>
     <title>Ninja Gold</title>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script>
-        $(document).ready(function() {
-        });
-    </script>
 </head>
 <style media="screen">
 
@@ -58,7 +53,7 @@ padding: 10px;
 <body>
     <div class='wrapper'>
         <div class='header'>
-            <p>Your gold: {{session['total_gold']}}</p>
+            <p>Your gold:{{request.session.total_gold}} </p>
 
         </div>
         <div class='body'>
@@ -99,11 +94,11 @@ padding: 10px;
         <p> Activities: </p>
         <br>
         <p>
-        {%for activity in request.session['log']%}
+        {%for activity in request.session.log%}
           <p>{{activity}}</p>
         {%endfor%}
       </p>
-        <a href="/reset">Reset</a>
+        <a href="/reset"><button type="button" name="button">Reset</button></a>
     </div>
 </body>
 </html>

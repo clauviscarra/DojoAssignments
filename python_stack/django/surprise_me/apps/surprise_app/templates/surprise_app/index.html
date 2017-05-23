@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Surprise</title>
+    {%load staticfiles%}
+    <link rel="stylesheet" href="{% static 'surprise_app/css/style.css' %}"media="screen" title="no title"  charset="utf-8">
+  </head>
+  <body>
+    <h1>Surprise Me!</h1>
+    <form action="/process" method="post"> {% csrf_token %}
+      Pick a number: <input type="text" name="number">
+      <input type="submit" value="Ready!">
+
+    </form>
+
+  </body>
+</html>
