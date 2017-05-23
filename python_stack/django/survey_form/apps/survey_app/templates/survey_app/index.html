@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Return Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  </style>
+</head>
+<style media="screen">
+*{
+  font-family: sans-serif;
+  text-align: center;
+}
+
+a{
+  display: inline-block;
+}
+.box{
+  display: inline-block;
+  width: 250px;
+  margin: auto;
+  border: 1px solid black;
+  height:300px;
+  font-size: 12px;
+  vertical-align: top;
+  padding: 10px;
+}
+option{
+  margin:10px;
+}
+select{
+  margin: 10px;
+}
+
+</style>
+
+<body>
+  <div class="box">
+
+  <form action='/submission', method='POST'>   {% csrf_token %}
+<h1>Information</h1>
+      Your Name: <input type='text' name='name'>
+      <br>
+      Dojo Location: <select name='location'>
+        <option value='Washington, DC'>DC</option>
+
+          <option value='Washington, DC'>DC</option>
+          <option value='San Jose'>San Jose</option>
+          <option value='Seattle'>Seattle</option>
+      </select>
+      <br>
+      Favorite Language: <select name='language'>
+          <option value='Python'>Python</option>
+          <option value='JavaScript'>JavaScript</option>
+          <option value='Java'>Java</option>
+      </select>
+      <br>
+      Comments: <textarea name='comments' ></textarea>
+      <br>
+      <input type='submit'>
+</form>
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Document</title>
+      {% load staticfiles %}
+      <link rel="stylesheet" href="{% static 'folio_app/css/style.css' %}"media="screen" title="no title"  charset="utf-8">
+  </head>
+  <!-- /*<style media="screen">
+    *{
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    a{
+      display: inline-block;
+    }
+    .box{
+      display: inline-block;
+      width: 200px;
+      margin: auto;
+      border: 1px solid black;
+      height:100px;
+      font-size: 12px;
+      vertical-align: top;
+      padding: 10px;
+    }
+  </style>*/ -->
+  <body>
+    <h1>Hi, I'm Claudia</h1>
+    <h2>Welcome to My Portfolio</h2>
+    <br>
+    <br>
+    <div class="box">
+      <a href="/projects">Projects</a>
+
+      <p>I have a variety of projects both personal and contract. They are built using Python, Swift, and Java Script.</p>
+    </div>
+    <div class="box">
+      <a href="/about">About Me</a>
+
+      <p>A little about my background and why I do what I do.</p>
+    </div>
+    <div class="box">
+      <a href="/testimonials">Testimonials</a>
+
+      <p>What my clients and mentors have to say about my projects and work ethic.</p>
+    </div>
+  </body>
+</html>

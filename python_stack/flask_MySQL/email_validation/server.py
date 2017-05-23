@@ -30,6 +30,7 @@ def email_processing():
         return render_template('success.html', show_emails  =show_emails)
 
     else:
+        email_addition()
         flash('E-mail is not valid!')
         return redirect('/')
 

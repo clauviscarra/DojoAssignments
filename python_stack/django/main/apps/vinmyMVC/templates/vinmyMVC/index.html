@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Document</title>
+  </head>
+  <style media="screen">
+  *{
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  a{
+    display: inline-block;
+  }
+  .box{
+    display: inline-block;
+    width: 250px;
+    margin: auto;
+    /*border: 1px solid black;*/
+    height:300px;
+    font-size: 12px;
+    vertical-align: top;
+    padding: 10px;
+  }
+
+  </style>
+  <body>
+    <h1>Index Html </h1>
+
+
+
+    <div class="box">
+      {{request.session.name}}
+      {{request.session.last_name}}
+      <form class="" action="/new_user" method="post">
+        	{% csrf_token %}
+        <input type="text" name="first_name" value="">
+        <input type="text" name="last_name" value="">
+        <br>
+        <input type="submit" name="submit" value="submit">
+
+      </form>
+
+    </div>
+
+  </body>
+</html>

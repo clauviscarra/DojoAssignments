@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>You Returned</title>
+  </head>
+  <style media="screen">
+  *{
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  a{
+    display: inline-block;
+  }
+  .box{
+    display: inline-block;
+    width: 250px;
+    margin: auto;
+    border: 1px solid black;
+    height:300px;
+    font-size: 12px;
+    vertical-align: top;
+    padding: 10px;
+  }
+  </style>
+  <body>
+<div class="box">
+  <p>You have submitted this form {{request.session.total_count}} times now.</p>
+  <h1>Submitted Info</h1>
+    <p>Name: {{request.session.first_name}}</p>
+    <p>Location: {{request.session.location}}</p>
+    <p>Language: {{request.session.language}}</p>
+<p>Comments: {{request.session.comments}}</p>
+
+<form class="" action="/" method="post"> {% csrf_token %}
+<input type="submit" name="" value="Go Back">
+</form>
+
+</div>
+
+  </body>
+</html>
