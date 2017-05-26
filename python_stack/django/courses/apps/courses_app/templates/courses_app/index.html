@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+  *{
+    font-family: arial, sans-serif;
+    text-align: center;
+  }
+  table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+  }
+
+  td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+  }
+
+  tr:nth-child(even) {
+      background-color: #dddddd;
+  }
+  </style>
+  <body>
+
+    <h1>Add a new course</h1>
+    <form class="" action="/add_course" method="post">{%csrf_token%}
+      Name: <input type="text" name="course_name" value="">
+      Description: <input type="text" name="description" value="">
+      <input type="Submit" name="" value="Submit">
+      </form>
+
+    <h1>Courses</h1>
+    <table>
+      <tr>
+        <th>Course name</th>
+        <th>Description</th>
+        <th>Date Added</th>
+        <th>Actions</th>
+      </tr>
+      {%for i in course%}
+
+      <tr>
+        <td>{{i.course_name}}</td>
+
+        <td>{{i.description}}</td>
+
+        <td>{{i.date_added}}</td>
+
+        <td> <a href="/reset/{{i.id}}"> Reset </a></td>
+      </tr>
+        {%endfor%}
+    </table>
+
+
+  </body>
+</html>

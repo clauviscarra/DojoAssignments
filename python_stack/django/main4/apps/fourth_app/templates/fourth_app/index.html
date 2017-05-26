@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Documents</title>
+  </head>
+  <style media="screen">
+    *{
+      font-family: sans-serif;
+      text-align: center;
+    }
+    textarea{
+      margin: 5px;
+    }
+  </style>
+  <body>
+    <h1>Hello World</h1>
+    {%for blog in blogs%}
+      <h5>{{blog.title}}</h5>
+      <p>{{blog.blog}}</p>
+      {% for comment in blog.comment_set.all %}
+        {{comment.comment}}
+      {%endfor%}
+
+
+      <form class="" action="/comments/{{blog.id}}" method="post">{%csrf_token%}
+        <textarea name="comment" rows="4" cols="30"></textarea>
+        <br><input type="submit" name="" value="Enter Comment">
+  {% endfor %}
+      </form>
+    <form class="" action="/blogs" method="post">{%csrf_token%}
+      <br><label for="">Title</label>
+      <br><input type="text" name="title" >
+      <br><textarea name="blog" rows="8" cols="80"></textarea>
+      <br><input type="submit" name="" value="Enter Blog">
+
+    </form>
+<a href="/clear">Clear session</a>
+  </body>
+</html>
