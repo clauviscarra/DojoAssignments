@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login Registration</title>
+    {% load staticfiles %}
+      <link rel="stylesheet" href="{% static 'teams_app/css/style.css' %}"media="screen" title="no title"  charset="utf-8">
+  </head>
+
+  <body>
+    <div class="teams-page">
+      <div class="teams-background">
+        <h1 class='message'>Create a Team!</h1>
+
+        <form class="login-form" action="/create" method="post">{%csrf_token%}
+          <input type="text" placeholder="Team Name" name="team_name"/>
+          <input class = 'button'type="submit" name="submit" value="Create!">
+
+
+        </form>
+
+
+        <hr>
+      </div>
+
+    </div>
+
+  </body>
+
+  </html>
