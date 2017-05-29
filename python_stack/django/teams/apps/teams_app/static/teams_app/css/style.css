@@ -9,6 +9,11 @@ color: #4CAF50;
 text-decoration: none;
 display: inline-block;
 }
+select{
+  display: block;
+  margin: 0 auto 10px;
+  text-align: center;
+}
 .jointext {
 font-family: "Roboto", sans-serif;
 text-transform: uppercase;

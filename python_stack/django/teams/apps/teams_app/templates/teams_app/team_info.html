@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Team Information</title>
+    {% load staticfiles %}
+      <link rel="stylesheet" href="{% static 'teams_app/css/style.css' %}"media="screen" title="no title"  charset="utf-8">
+  </head>
+
+  <body>
+    <div class="teams-page">
+      <div class="teams-background">
+        <h1 class='message'>Hi, {{request.session.user_email}}!</h1>
+
+        <h1 class='info'> Team Information</h1>
+<h2>Team members: </h2>
+
+          {%for i in user_teams%}
+      <p><a href="users/{{i.user.last_name}}">{{i.user.first_name}} {{i.user.last_name}}</a></p>
+
+        {%endfor%}
+
+
+        <form class="" action="/success" method="post">{%csrf_token%}
+          <input class="button" type="submit" name="" value="Go Back!">
+
+        </form>
+        <hr>
+
+      </div>
+    </div>
+
+  </body>
+
+  </html>

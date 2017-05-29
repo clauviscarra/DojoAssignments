@@ -25,7 +25,7 @@ def register_process(request):
     result2 = User.objects.register(request.POST)
     request.session['user_email'] = request.POST['email']
 
-    # user_name = request.session['first_name'], request.session['last_name']
+
 
     if result2[0]:
         return redirect ('/success')
