@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Team, User_Team, User
 from django.contrib import messages
 from sets import Set
+from django.db.models import Sum, Count
 
 def success(request):
     a = set(Team.objects.all())
@@ -18,7 +19,8 @@ def success(request):
     }
 
     return render(request,'teams_app/success.html', context)
-# Create your views here.
+
+
 def create(request):
     team_result = Team.objects.make_team(request.POST)
 
@@ -29,9 +31,8 @@ def create(request):
         for i in team_result[1]:
             messages.info(request,i)
         return redirect ('/success')
-def join_team(request):
-    result_join_team = Team.objects.join_team(request.POST)
 
+def join_team(request):
 
     t1 = Team.objects.filter(id = request.POST['team_name'])
     u1 = User.objects.filter(email = request.session['user_email'])
@@ -43,12 +44,12 @@ def join_team(request):
 def team_info(request):
 
     team_info_save = request.POST['view_info']
-
+    request.session['team_name'] = team_info_save
     context ={
 
     'all_users':User.objects.filter(email = request.session['user_email']),
     'user_teams':User_Team.objects.filter(team__name=team_info_save),
-    # 'user_in_team':User_Team.objects.filter(id=team_info_save)
+    'total_teams':User_Team.objects.filter(team__name=team_info_save).count()
 
     }
 
@@ -62,3 +63,8 @@ def view_users(request,last_name):
 
 
     return render(request,'teams_app/user_info.html', context)
+
+def leave_team(request):
+    User_Team.objects.filter(team__name=request.session['team_name']).filter(user__email=request.session['user_email']).delete()
+
+    return redirect ('/success')

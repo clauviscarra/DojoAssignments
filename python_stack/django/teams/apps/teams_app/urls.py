@@ -5,6 +5,7 @@ urlpatterns = [
     url(r'^create$', views.create),
     url(r'^join_team$', views.join_team),
     url(r'^team_info$', views.team_info),
+    url(r'^leave_team$', views.leave_team),
     url(r'^users/(?P<last_name>\w+)$', views.view_users)
  # This line has changed!
   ]

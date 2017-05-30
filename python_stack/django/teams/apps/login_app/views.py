@@ -9,7 +9,7 @@ def index(request):
 def login(request):
     result = User.objects.login(request.POST)
     request.session['user_email'] = request.POST['email']
-    user_email = request.session['user_email']
+    
 
     if result == True:
         return redirect ('/success')
