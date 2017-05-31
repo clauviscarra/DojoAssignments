@@ -5,15 +5,15 @@ from sets import Set
 from django.db.models import Sum, Count
 
 def success(request):
-    a = set(Team.objects.all())
-    b= set(Team.objects.filter(team_name__user__email=request.session['user_email']))
+    a = set(Team.objects.all().order_by('name'))
+    b= set(Team.objects.filter(team_name__user__email=request.session['user_email']).order_by('name'))
     excluded_teams = (a.difference(b))
 
 
 
     context ={
     "all_teams":Team.objects.all(),
-    'user_teams':User_Team.objects.filter(user__email = request.session['user_email']),
+    'user_teams':User_Team.objects.filter(user__email = request.session['user_email']).order_by('team'),
     # "some_teams":Team.objects.all(),
     "excluded_teams": excluded_teams
     }
@@ -48,7 +48,7 @@ def team_info(request):
     context ={
 
     'all_users':User.objects.filter(email = request.session['user_email']),
-    'user_teams':User_Team.objects.filter(team__name=team_info_save),
+    'user_teams':User_Team.objects.filter(team__name=team_info_save).order_by('user'),
     'total_teams':User_Team.objects.filter(team__name=team_info_save).count()
 
     }

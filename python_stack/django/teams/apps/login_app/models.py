@@ -10,16 +10,19 @@ class UserManager(models.Manager):
         errors =[]
         if  len(login_data['email']) < 1:
             flag = False
-            errors.append('Please enter e-mail')
+            errors.append('Please enter e-mail.')
         elif  not email_regex.match(login_data['email']):
             errors.append('Please enter valid email')
             flag = False
         if  len(login_data['password']) < 1:
             flag = False
-            errors.append('Please enter password')
+            errors.append('Please enter password.')
         elif not User.objects.filter(email = login_data['email']):
             flag = False
             errors.append('You are not in our data base, please register.')
+        elif not User.objects.filter(password = login_data['password']):
+            flag = False
+            errors.append('Your password is wrong.')
 
         if flag:
             return True
@@ -31,23 +34,24 @@ class UserManager(models.Manager):
 
         if len(register_data['first_name']) < 1:
             flag = False
-            errors.append('Please enter First Name')
+            errors.append('Please enter First Name.')
         if len(register_data['last_name']) < 1:
             flag = False
-            errors.append('Please enter Last Name')
+            errors.append('Please enter Last Name.')
         if  len(register_data['email']) < 1:
             flag = False
             errors.append('Please enter e-mail')
-        elif User.objects.filter(email=register_data['email']):
-            errors.append('You cannot register twice')
+        if User.objects.filter(email=register_data['email']):
+            flag = False
+            errors.append('You cannot register twice.')
         elif  not email_regex.match(register_data['email']):
-            errors.append('Please enter valid email')
+            errors.append('Please enter valid email.')
             flag = False
         if  len(register_data['password']) < 1:
             flag = False
-            errors.append('Please enter password')
+            errors.append('Please enter password.')
         elif (register_data['password']) != (register_data['confirm']):
-            errors.append('Password does not match')
+            errors.append('Password does not match.')
             flag = False
         if flag:
             new_user = User.objects.create(first_name=register_data['first_name'], last_name=register_data['last_name'], email=register_data['email'], password=register_data['password'])
