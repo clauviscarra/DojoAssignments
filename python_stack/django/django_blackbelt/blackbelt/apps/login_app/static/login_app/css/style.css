@@ -5,6 +5,12 @@ text-decoration: none;
 display: inline-block;
 }
 
+.orange_highlight{
+  color : #2179c6;
+
+  }
+
+
 .login-page {
  width: 360px;
  padding: 8% 0 0;
@@ -101,6 +107,9 @@ hr {
  cursor: pointer;
 }
 .form .button:hover,.form .button:active,.form .button:focus {
+ background: #f7925b;
+}
+.button:hover, .button:active,.form .button:focus {
  background: #f7925b;
 }
 .form .message {

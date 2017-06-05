@@ -21,7 +21,9 @@ def add_plan(request):
     return render (request,'project_app/add_plan.html')
 
 def process_travel(request):
-    process_result = Travel.objects.add_plan(request.POST)
+    session = request.session['user_name']
+    process_result = Travel.objects.add_plan(request.POST, session)
+
 
     if process_result[0]:
 

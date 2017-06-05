@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Team Information</title>
+    {% load staticfiles %}
+      <link rel="stylesheet" href="{% static 'login_app/css/style.css' %}"media="screen" title="no title"  charset="utf-8">
+  </head>
+
+  <body>
+    <div class="teams-page">
+      <div class="teams-background">
+        <h1 >Welcome, {{request.session.user_email}}!</h1>
+
+
+        <div class="form">
+          <h2 class='info'> Quotable Quotes</h2>
+          {%for i in excluded_quotes%}
+          <p>{{i.quote_by}} | {{i.message}}</p>
+          <p>Posted by <a href="userinfo/{{i.created_by}}">{{i.created_by}}</a></p>
+          <a href="favequote/{{i.id}}">Add to My List</a>
+          <hr>
+          {%endfor%}
+
+          </div>
+
+
+
+        <div class="form" >{%csrf_token%}
+          <h2 class='info'> Your Favorites</h2>
+          {%for i in fave_quotes%}
+          <p>{{i.my_favorites.quote_by}} | {{i.my_favorites.message}}</p>
+          <p>Posted by <a href="userinfo/{{i.my_favorites.created_by}}">{{i.my_favorites.created_by}}</a></p>
+          <a href="/quotes/remove_quote/{{i.my_favorites.id}}">Remove From My List</a>
+          <hr>
+          {%endfor%}
+        </div>
+
+        <form class="form" action="makequote" method="post">{%csrf_token%}
+          <h2>Submit a Quote</h2>
+          <input type="text" name="quote_by" placeholder="quote by">
+          <input type="text" name="message" placeholder="message">
+          <input class='button' type="submit" name="" value="Submit">
+
+          {%if messages%}
+                    {%for message in messages%}
+                    <h3 class='message'>{{message}}</h3>
+                    {%endfor%}
+                    {%endif%}
+        </form>
+
+<hr>
+<a href="/logout">Log Out</a>
+      </div>
+    </div>
+
+  </body>
+
+  </html>
