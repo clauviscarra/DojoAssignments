@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Group Chat</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var socket = io.connect();
+      var name = prompt('What is your name?');
+      socket.emit('send_user_name', {user:name})
+      console.log(name);
+      socket.on('send_user_name', function(data){
+        for(var i = 0; i < data.all_users.length; i++){
+          $('#users').append('<p>' + data.all_users[i] + '</p>')
+        }
+      })
+      $('#submitButton').click(function(){
+        var message = $('#chatInput').val();
+        socket.emit('send_message', {"message":message, "sender":socket.id})
+      })
+      socket.on('send_message', function(data){
+        $('#chatBox').append('<p>' + data.message + ' -' + data.sender + '</p>')
+      })
+    socket.on('user_left', data =>{
+      $('#users').html("");
+      for (var i=0; i< data.users.length; i++){
+      $('#users').append('<p>' + data.users[i] + '</p>')
+    }
+    })
+
+    });
+  </script>
+  <style media="screen">
+    * {
+      font-family: sans-serif;
+      text-align: center;
+      margin: auto;
+      padding: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="chatBox"> </div>
+  <br>
+  <div id="users"> </div>
+  <br>
+  <input type="textarea" id="chatInput" placeholder="enter message here">
+  <button id="submitButton">Send</button>
+
+<style media="screen">
+  #chatBox{
+    width:50%;
+    overflow-y: scroll;
+    height: 350px;
+    border: 1px solid black;
+    margin-left: auto;
+  }
+  #users{
+    width:50%;
+    overflow-y: scroll;
+    height: 70px;
+    border: 1px solid black;
+    margin-left: auto;
+
+  }
+  #chatInput{
+    width: 50%;
+    height: 20%;
+    display: block;
+    margin-left: auto;
+  }
+</style>
+</body>
+
+</html>
