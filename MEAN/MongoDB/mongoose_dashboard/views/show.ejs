@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Look these animals!</title>
+    </head>
+    <body>
+        <h1>Here's that animal you clicked on!</h1>
+        <% for (i in animals) { %>
+            <h3><%= animals[i].type %> | <%= animals[i].name %> | <%= animals[i].weight%> lbs</h3>
+
+      <a href="/mongooses/edit/<%= animals[i]._id%>"> Edit Animal</a>
+
+            <hr/>
+
+        <% } %>
+        <a href="/">Back home!</a>
+    </body>
+</html>

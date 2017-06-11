@@ -19,8 +19,8 @@ app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-  User.find({}, function(err, users) {
-console.log(users);
+  User.findOne({name:'Alejandro'}, function(err, users) {
+    console.log(users);
 })
 
     res.render('index');

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Look these animals!</title>
+    </head>
+    <body>
+        <h1>Edit this animal!</h1>
+        <% for (i in animals) { %>
+            <h3><%= animals[i].type %></h3>
+
+            <form class="" action="/mongooses/edit/<%= animals[i]._id%>" method="post">
+              <p>New Type:
+                  <input type="text" name="type" placeholder="<%= animals[i].type %>"></p>
+              <p>New Name:
+                  <input type="text" name="name" placeholder="<%= animals[i].name %>"></p>
+              <p>New Weight:
+                    <input type="text" name="weight" placeholder="<%= animals[i].weight%>"></p>
+              <input type="submit" name="" value="Edit my Animal!">
+
+
+            </form>
+
+            <hr/>
+
+        <% } %>
+        <a href="/">Back home!</a>
+    </body>
+</html>
