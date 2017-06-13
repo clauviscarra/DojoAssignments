@@ -1,0 +1,72 @@
+<!--The whole content below can be removed with the new code.-->
+
+<h1>Dojo Mail</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Importance</th>
+    <th>Subject</th>
+    <th>Content</th>
+  </tr>
+  <tr  *ngFor = 'let email of emails, let i = index'>
+    <td >{{emails[0].email[i]}}</td>
+    <td >{{emails[1].importance[i]}}</td>
+    <td >{{emails[2].subject[i]}}</td>
+    <td >{{emails[3].content[i]}}</td>
+
+  </tr>
+
+
+
+
+</table>
+
+
+<!-- <span [ngClass]="{ 'red': true, 'bold': false }">I should be red but not bolded.</span>
+<span [ngClass]="{ 'red': true, 'bold': true }">I should be red and bolded.</span>
+
+
+<h1 *ngIf = 'myBoolean'>Show this!</h1>
+<h1 *ngIf = '1!==1'>Don't show this!</h1>
+
+<ul>
+  <li *ngFor='let i of myArray'>
+  {{i}}
+  </li>
+
+</ul>
+
+<h5 *ngFor = 'let i of myArray'>{{i}}</h5> -->
+
+
+
+  <!-- <h1>{{title | uppercase}}</h1> -->
+
+<!-- | are called pipe filters, look them up in the documentation! -->
+
+  <!-- <p>{{x}}</p>
+  <p>{{y | currency}}</p>
+  <p>{{x + y}}</p>
+  <p>{{myStr | date}} {{x}}</p>
+  <p>{{user.firstname}}</p>
+  <p>{{user.lastname}}</p>
+  <p>{{user | json}}</p>
+
+  <p>{{today | date:'fullDate'}} fullDate</p>
+  <p>{{today | date:'longDate'}} longDate</p>
+  <p>{{today | date:'shortDate'}} shortDate</p>
+
+  <p>{{today | date:'short'}} short </p>
+  <p>{{today | date:'shortTime'}} shortTime</p>
+  <p>{{today | date:'mediumTime'}} mediumTime</p> -->
+
+
+
+
+
+
+
+  <!-- When you put square brackets around value, it evealuates to the actual interpolation value. This is called binding -->
+  <!-- <input type="text" name="" [value]="x">
+  <a href="/{{user.lastname}}">What will happen??</a> -->
