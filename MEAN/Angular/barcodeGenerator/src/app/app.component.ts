@@ -13,5 +13,11 @@ export class AppComponent {
   c:number =  (Math.floor(Math.random() * 4)) + 1;
   d:number =  (Math.floor(Math.random() * 4)) + 1;
   e:number =  (Math.floor(Math.random() * 4)) + 1;
-
+  num:number=1;
+  logNum(){
+    console.log('num is:', this.num);
+  };
+  increaseNum(){
+    this.num = this.num +1;
+  }
 }

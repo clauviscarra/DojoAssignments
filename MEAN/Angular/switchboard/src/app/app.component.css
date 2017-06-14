@@ -1,0 +1,38 @@
+*{
+  font-family: sans-serif;
+}
+.wrapper {
+    text-align:center
+}
+
+.buttons {
+    display:flex;
+    margin-left: 380px;
+}
+
+.brown {
+    background-color: brown;
+    height:75px;
+    width:75px;
+}
+
+button {
+    color: white;
+    height:40px;
+    width:40px;
+    margin-top: 15px;
+}
+
+.green {
+    height:40px;
+    width:40px;
+    margin-top: 15px;
+    background-color: green;
+}
+
+.red {
+    height:40px;
+    width:40px;
+    margin-top: 15px;
+    background-color: red;
+}

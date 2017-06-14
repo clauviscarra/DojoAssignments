@@ -1,0 +1,143 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+  <style media="screen">
+    *{
+      font-family: sans-serif;
+      text-align: left;
+    }
+    .error{
+      font-size: 12px;
+      color: red;
+      display:inline-block;
+    }
+    .container{
+      border: 1px solid black;
+      width :500px;
+      height: auto;
+      margin: auto;
+      padding: 20px;
+    }
+  </style>
+
+  <div class="container">
+
+
+  <form (submit)="onSubmit()">
+
+    <p>First Name: <input type="text" name="first_name"
+    required
+    minlength="4"
+    maxlength="24"
+    [(ngModel)]="user.first_name"
+    #first_name='ngModel'></p>
+
+    <div class = 'error' *ngIf = "!first_name.valid">First name is required </div>
+
+    <p>Last Name: <input type="text" name="last_name"
+    required
+    minlength="4"
+    maxlength="24"
+    [(ngModel)]="user.last_name"
+    #last_name='ngModel'></p>
+    <div class = 'error' *ngIf = "!last_name.valid">Last name is required </div>
+
+    <p>E-mail :<input type="text" name="email"
+    required
+    minlength="4"
+    maxlength="24"
+    pattern = "^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$"
+    [(ngModel)]="user.email"
+    #email='ngModel'></p>
+
+    <div class = 'error' *ngIf = "!email.valid">E-mail must be valid </div>
+
+    <p>Password: <input type="password" name="password"
+    required
+    minlength="10"
+    maxlength="24"
+    pattern="^([a-zA-Z0-9@*#]{8,15})$"
+    [(ngModel)]="user.password"
+    #password='ngModel'></p>
+    <div class = 'error' *ngIf = "!password.valid"> Password must be at least 10 characters long</div>
+
+    <p>Password confirm: <input type="password" name="password_confirm"
+    required
+    minlength="10"
+    maxlength="24"
+    [(ngModel)]="user.password_confirm"
+    #password_confirm='ngModel'>
+    </p>
+
+    <div class = 'error' *ngIf = "user.password_confirm != user.password"> Password must match</div>
+
+    <p>Street Address: <input type="type" name="street_address"
+    required
+    minlength="10"
+    maxlength="24"
+    [(ngModel)]="user.street_address"
+    #street_address='ngModel'></p>
+
+    <div class = 'error' *ngIf = "!street_address.valid"> Address is required</div>
+
+    <p>Unit/Apt: <input type="type" name="unit_apt"
+    required
+    minlength="10"
+    maxlength="24"
+    [(ngModel)]="user.unit_apt"
+    #unit_apt='ngModel'></p>
+
+
+    <p>City: <input type="type"
+    name="city"
+    required
+    minlength="10"
+    maxlength="24"
+    [(ngModel)]="user.city"
+    #city='ngModel'></p>
+    <div class = 'error' *ngIf = "!city.valid"> City is required</div>
+
+    <p>State:
+      <select name="state"
+      required
+      [(ngModel)] = "user.state"
+      #state = 'ngModel'>
+        <option name="Alabama">Alabama</option>
+        <option name="Alaska">Alaska</option>
+        <option name="Arizona">Arizona</option>
+      </select>
+      <div class = 'error' *ngIf = "!state.valid"> State is required</div>
+
+      <p>I'm feeling lucky</p>
+      <form>
+     <input type="radio"
+     name = 'luck'
+    required
+    [(ngModel)] = "user.luck"
+    #luck = 'ngModel'
+    value="yes"> Yes <br>
+     <input type="radio" name="luck"
+     required
+     [(ngModel)] = "user.luck"
+     #luck = 'ngModel'
+      value="no"> No<br>
+      <div class = 'error' *ngIf = "!luck.valid"> You must tell me how you feel</div>
+    </form>
+
+
+
+      <br>
+    <input
+     *ngIf ='email.valid && first_name.valid && last_name.valid && password.valid && street_address.valid && city.valid && state.valid && luck.valid' type="submit" value='Now you can register'>
+
+
+  </form>
+
+  <h3>{{users[0]}} {{users[1].first_name}}, {{users[1].email}}, {{users[1].city}}, {{users[1].state}}  </h3>
+
+
+
+
+    </div>
+
+  <!-- {{user.password | json}}
+  {{users | json}} -->
