@@ -1,0 +1,50 @@
+
+<style media="screen">
+  h3{
+    display: inline-block;
+  }
+  form{
+    display: inline-block;
+  }
+  button{
+    display: inline;
+  }
+  img{
+    height:100px;
+    width:auto;
+    display: block;
+    position:relative;
+    left:600px;
+    bottom:100px;
+  }
+</style>
+<div class="container">
+
+
+<h3>Initial Power Level</h3>
+<form (submit)="onSubmit()">
+  <select name="number"
+  required
+  [(ngModel)]="power.number"
+  >
+    <option value="1">1</option>
+    <option value="10">10</option>
+    <option value="20">20</option>
+    <option value="30">30</option>
+    <option value="40">40</option>
+    <option value="50">50</option>
+    <option value="60">60</option>
+    <option value="70">70</option>
+    <option value="80">80</option>
+    <option value="90">90</option>
+    <option value="100">100</option>
+  </select>
+  <input type="submit" name="" value="Calculate Powers">
+</form>
+
+<img src="http://images.saiyanisland.com/data/508/Goku_15.jpg" alt="goku">
+
+<app-body [myPower]='powers'></app-body>
+
+
+</div>

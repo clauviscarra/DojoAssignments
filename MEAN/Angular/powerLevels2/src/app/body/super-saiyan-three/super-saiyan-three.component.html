@@ -1,0 +1,20 @@
+<style media="screen">
+*{
+  text-align: center;
+}
+.error{
+  color:red;
+  font-size: 10px;
+}
+</style>
+
+<div class="container">
+  <p>Super Saiyan Three Component</p>
+  <div *ngFor = "let power of myPower, let i = index" >
+      <p >Power Level: {{myPower[i].number * 250}}</p>
+      <p class='error' *ngIf = 'myPower[i].number * 2500 > 25000'> Superlative!</p>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,27 @@
+<style media="screen">
+*{
+  font-family: sans-serif;
+}
+  fieldset{
+    width:500px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+   .p{
+    font-style: italic;
+  }
+</style>
+<fieldset *ngFor = "let quote of myQuotes, let i = index">
+  <legend>Quotes list</legend>
+  <h3>{{myQuotes[i].text}}</h3>
+  <p class="p">-{{myQuotes[i].author}}</p>
+
+  <form>
+    <input (click)="voteUp()" type="submit" name="up" value="Vote Up">
+    <input (click) = "voteDown()" type="submit" name="down" value="Vote Down">
+    <input (click) = "delete()" type="submit" name="delete" value="Delete">
+  </form>
+  <p >{{counting}}</p>
+</fieldset>

@@ -1,0 +1,10 @@
+<style media="screen">
+*{
+  text-align: center;
+}
+</style>
+<div class="container">
+  <p>Human Component</p>
+  <p *ngFor = "let power of myPower, let i = index" >Power Level: {{myPower[i].number}}</p>
+
+</div>

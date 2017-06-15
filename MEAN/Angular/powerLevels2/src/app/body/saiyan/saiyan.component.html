@@ -1,0 +1,12 @@
+<style media="screen">
+*{
+  text-align: center;
+}
+</style>
+<div class="container">
+  <p>Super Saiyan Component</p>
+  <div *ngFor = "let power of myPower, let i = index" >
+      <p >Power Level: {{myPower[i].number * 100}}</p>
+  </div>
+
+</div>

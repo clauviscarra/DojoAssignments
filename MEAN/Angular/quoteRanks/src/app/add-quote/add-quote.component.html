@@ -17,18 +17,22 @@
   minlength = "3"
   [(ngModel)] = "quote.text"
   #text = 'ngModel'></p>
-  <div class="error" *ngIf = "!text.valid"> Please enter quote
-  </div>
 
   <p><input type="text" name="author" placeholder="author"
   required
   minlength="3"
   [(ngModel)] = "quote.author"
   #author = "ngModel"></p>
+
+  <div class="error" *ngIf = "!text.valid"> Please enter quote
+  </div>
+<br>
   <div class="error" *ngIf = "!author.valid"> Please enter author
   </div>
 
-  <p><input type="submit" name="add-quote" value="Add Quote"></p>
+  <p><input *ngIf ='text.valid && author.valid' type="submit" name="add-quote" value="Add Quote"></p>
 </form>
-{{quote | json}}
-{{quotes | json}}
+<!-- {{quote | json}}
+{{quotes | json}} -->
+
+<app-quote-list [myQuotes]="quotes"></app-quote-list>
