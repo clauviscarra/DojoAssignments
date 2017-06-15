@@ -1,0 +1,24 @@
+<style media="screen">
+*{
+  font-family: sans-serif;
+}
+  fieldset{
+    width:500px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+  fieldset p{
+    font-style: italic;
+  }
+</style>
+<fieldset>
+  <legend>Quotes list</legend>
+  <p>{{myQuotes}}</p>
+  <form>
+    <input type="submit" name="up" value="Vote Up">
+    <input type="submit" name="down" value="Vote Down">
+    <input type="submit" name="delete" value="Delete">
+  </form>
+</fieldset>
