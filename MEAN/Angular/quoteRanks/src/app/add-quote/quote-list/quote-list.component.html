@@ -15,13 +15,13 @@
 </style>
 <fieldset *ngFor = "let quote of myQuotes, let i = index">
   <legend>Quotes list</legend>
-  <h3>{{myQuotes[i].text}}</h3>
-  <p class="p">-{{myQuotes[i].author}}</p>
+  <h3>{{quote.text}}</h3>
+  <p class="p">-{{quote.author}}</p>
 
   <form>
-    <input (click)="voteUp()" type="submit" name="up" value="Vote Up">
-    <input (click) = "voteDown()" type="submit" name="down" value="Vote Down">
-    <input (click) = "delete()" type="submit" name="delete" value="Delete">
+    <input (click)="voteUp(quote, i)" type="submit" name="up" value="Vote Up">
+    <input (click) = "voteDown(quote,i)" type="submit" name="down" value="Vote Down">
+    <input (click) = "myQuotes.splice(i,1)" type="submit" name="delete" value="Delete">
   </form>
-  <p >{{counting}}</p>
+  <p >+{{quote.vote}}</p>
 </fieldset>

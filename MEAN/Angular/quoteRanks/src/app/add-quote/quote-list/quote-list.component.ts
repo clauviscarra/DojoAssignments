@@ -13,19 +13,15 @@ export class QuoteListComponent implements OnInit {
   ngOnInit() {
   }
 
-  count: number = 0;
-  counting : number = 0;
-  voteUp(){
-    this.counting = this.count ++;
+
+  voteUp(quote,i){
+    quote.vote++;
   }
-  voteDown(){
-    this.counting = this.count --;
+  voteDown(quote,i){
+    quote.vote--;
 
   }
 
-  delete(){
-    this.myQuotes.pop();
-  }
 
 
 }

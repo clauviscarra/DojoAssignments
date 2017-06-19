@@ -1,0 +1,21 @@
+<style media="screen">
+  *{
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .container{
+  
+  }
+</style>
+
+<h1>Dojo Thingie</h1>
+<div class="container">
+  <a [routerLink] = "['/seattle']"> Seattle WA </a> | <a [routerLink] = "['/san-jose']">San Jose CA</a> | <a [routerLink] = "['/bubank']">Bubank CA</a> | <a [routerLink] = "['/dallas']">Dallas TX</a> | <a [routerLink] = "['/']">Washington D.C.</a> | <a [routerLink] = "['/chicago']">Chicago IL</a>
+
+</div>
+
+
+<fieldset>
+  <legend>City Information</legend>
+   <router-outlet></router-outlet>
+</fieldset>
