@@ -6,7 +6,7 @@ import 'rxjs/Rx';
 export class HttpService{
 
   constructor(private _http: Http) { }
-  retrieveGitData(username) {
-    return this._http.get('https://api.github.com/users/'+username).map(data=>data.json()).toPromise()
+  retrieveCityData(cityname) {
+    return this._http.get('http://api.openweathermap.org/data/2.5/weather?q=' +cityname + '&units=imperial&appid=7c0089a51d3a0058b9370a6f54a82ce1').map(data=>data.json()).toPromise()
   }
 }
