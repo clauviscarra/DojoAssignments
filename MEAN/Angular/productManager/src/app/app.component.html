@@ -1,0 +1,24 @@
+<style media="screen">
+  *{
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .container{
+    width: 600px;
+    height:auto;
+    padding:10px;
+    margin: auto;
+  }
+</style>
+<div class="container">
+
+
+<h1>PPM -Project Product Management</h1>
+
+<a [routerLink] = "['/']">Home</a> | <a [routerLink] = "['/products','list']">Product List</a> | <a [routerLink] = "['/products','create']">Product Creation</a>
+
+<fieldset>
+  <legend>Route</legend>
+  <router-outlet></router-outlet>
+</fieldset>
+</div>

@@ -1,0 +1,19 @@
+
+<h1>Create a New Product</h1>
+<form (submit)="create()">
+  Title:<input type="text" name="title"
+  required
+  minlength = "3"
+  [(ngModel)] = "product.title"
+  #title = 'ngModel'>
+  Price:<input type="text" name="price"
+  [(ngModel)] = "product.price"
+  #price = 'ngModel'>
+  Image URL:<input type="text" name="image"
+  [(ngModel)] = "product.image"
+  #image>
+  <input type="submit" name="" value="Create">
+
+
+
+</form>

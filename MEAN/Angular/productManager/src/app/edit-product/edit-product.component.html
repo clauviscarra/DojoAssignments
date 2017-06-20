@@ -1,0 +1,8 @@
+<h1>Edit Product</h1>
+<p>{{products[index].title}}</p>
+<form (submit)= "update()" >
+  Title:<input type="text" name="title" [(ngModel)] = "products[index].title">
+  Price:<input type="text" name="price" [(ngModel)] = "products[index].price">
+  <input type="submit" name="" value="Update">
+
+</form>
