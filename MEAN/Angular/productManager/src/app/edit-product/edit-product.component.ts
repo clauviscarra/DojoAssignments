@@ -16,10 +16,9 @@ export class EditProductComponent implements OnInit {
 
 
   constructor(private _route: ActivatedRoute, private _router: Router, private _productsService: ProductsServiceService ) {  this._route.params.subscribe(param => {
-    this.index = (param.idx);
+      this.index = (param.idx);
 
       console.log(this.index);
-
 
 
       })
@@ -34,6 +33,11 @@ export class EditProductComponent implements OnInit {
   update(){
     this._productsService.updateProducts(this.products); console.log(this.products)
     this.product = new Product();
+    this._router.navigate(['/products/list'])
+  }
+
+  delete(index){
+    this.products.splice(index, 1);
     this._router.navigate(['/products/list'])
   }
 

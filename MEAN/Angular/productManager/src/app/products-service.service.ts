@@ -15,7 +15,7 @@ export class ProductsServiceService {
   }
 
   getOneProduct(idx){
-    return this.products[idx];
+    return this.productsObservable[idx];
   }
 
 }

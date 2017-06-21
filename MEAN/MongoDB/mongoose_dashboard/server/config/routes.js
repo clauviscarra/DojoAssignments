@@ -1,7 +1,7 @@
 var animals = require('../controllers/animals.js');
 
 module.exports = function(app){
-  app.get('/', function(req, res) {
+  app.get('/animals', function(req, res) {
       animals.showall(req,res)
 
   })

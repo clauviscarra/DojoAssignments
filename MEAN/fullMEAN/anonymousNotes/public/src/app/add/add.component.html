@@ -1,0 +1,35 @@
+<style media="screen">
+  *{
+    font-family: sans-serif;
+    text-align: center;
+  }
+  fieldset{
+    width:500px;
+    margin: auto;
+  }
+
+  .date{
+    font-size: 10px;
+
+  }
+</style>
+
+
+<fieldset>
+  <h1>Add a Note!</h1>
+  <form (submit) ="createNote(note)">
+    Note:<input type="text" name="note"
+    [(ngModel)] = "note.content">
+    <input type="submit" name="" value="Submit">
+
+  </form>
+
+  <div *ngFor = "let note of notes ">
+
+    <p>{{note.content}}</p>
+    <p class='date'>{{note.createdAt | date:'medium'}}</p>
+    <hr>
+
+  </div>
+
+</fieldset>
