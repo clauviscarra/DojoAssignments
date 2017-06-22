@@ -1,0 +1,31 @@
+<style media="screen">
+  *{
+    font-family: sans-serif;
+    text-align: center;
+  }
+  fieldset{
+    width: 300px;
+    padding: 10px;
+    margin: auto;
+  }
+
+</style>
+
+<fieldset>
+
+<h1>First Place</h1>
+<p *ngIf='users[0].score > users[1].score'>{{users[0].login}} {{users[0].score}}</p>
+<p *ngIf='users[1].score > users[0].score'>{{users[1].login}} {{users[1].score}}</p>
+
+</fieldset>
+
+
+<fieldset>
+
+<h1>Second Place</h1>
+<p *ngIf='users[0].score < users[1].score'>{{users[0].login}} {{users[1].score}}</p>
+<p *ngIf='users[1].score < users[0].score'>{{users[1].login}} {{users[1].score}}</p>
+
+<a href="/">Home</a>
+
+</fieldset>

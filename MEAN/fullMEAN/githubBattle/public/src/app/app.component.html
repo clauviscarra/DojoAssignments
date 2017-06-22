@@ -1,0 +1,23 @@
+<style media="screen">
+  *{
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+.container{
+  width:750px;
+  height: auto;
+  margin: auto;
+}
+</style>
+
+<div class="container">
+
+  <h1>Github Battle</h1>
+
+  <a [routerLink]="['/rankings']">Rankings</a> | <a href="/">Home</a>
+  <br>
+
+  <router-outlet></router-outlet>
+
+</div>
